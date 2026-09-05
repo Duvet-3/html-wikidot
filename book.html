@@ -9,13 +9,13 @@
         margin: 0; padding: 10px; font-family: sans-serif;
     }
     :root {
-        --lh-paper-bg: 245, 240, 230;
-        --lh-book-color: 139, 69, 19;
+        --lh_paper_bg: 245, 240, 230;
+        --lh_book_color: 139, 69, 19;
     }
 
     /* 1. 外层固定书皮 */
     .book-wrapper {
-        background: rgb(var(--lh-book-color));
+        background: rgb(var(--lh_book_color));
         /* 上下保留 10px，左右缩减至 20px */
         padding: 10px 20px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.4);
@@ -28,7 +28,7 @@
     .book-viewport {
         overflow: hidden;
         width: 100%;
-        background: rgb(var(--lh-paper-bg));
+        background: rgb(var(--lh_paper_bg));
         border-radius: 3px;
         box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
     }
@@ -43,11 +43,11 @@
 
     /* 单页样式 */
     .notepaper {
-        background: linear-gradient(rgb(var(--lh-paper-bg)) 95%, #ddd 0);
+        background: linear-gradient(rgb(var(--lh_paper_bg)) 95%, #ddd 0);
         line-height: 2em;
         background-size: 100% 2em;
         background-attachment: local;
-        border: 2em solid rgb(var(--lh-paper-bg));
+        border: 2em solid rgb(var(--lh_pape_bg));
         box-shadow: -2px 0 5px rgba(0,0,0,0.05) inset;
         padding: 0;
         margin: 0;
@@ -209,15 +209,15 @@
 <script>
 const params = new URLSearchParams(window.location.search);
 
-const var1 = params.get("lh-paper-bg");
-const var2 = params.get("lh-book-color");
+const lh_paper_bg = params.get("lh_paper_bg");
+const lh_book_color = params.get("lh_book_color");
 
-if (lh-paper-bg !== null) {
-    document.documentElement.style.setProperty("--lh-paper-bg", lh-paper-bg);
+if (lh_paper_bg !== null) {
+    document.documentElement.style.setProperty("--lh_paper_bg", lh_paper_bg);
 }
 
-if (lh-book-color !== null) {
-    document.documentElement.style.setProperty("--lh-book-color", lh-book-color);
+if (lh_book_color !== null) {
+    document.documentElement.style.setProperty("--lh_book_color", lh_book_color);
 }
 </script>
 </body>
