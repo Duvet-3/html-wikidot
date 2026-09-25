@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运行时间</title>
+</head>
+<body>
+
+    <div class="quote" style="text-align: center; padding: 15px;">
+        <div id="time-difference" style="font-size: 1.4rem; font-weight: bold; color: rgb(var(--black-monochrome, 0, 0, 0));"></div>
+    </div>
+
+    <script>
+    var targetDate = new Date(2025, 10, 8, 18, 42, 19);
+
+    function updateTimeDifference() {
+        var now = new Date();
+        var passed = now - targetDate;
+
+        var daysPassed = Math.floor(passed / (1000 * 60 * 60 * 24));
+        var hoursPassed = Math.floor((passed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutesPassed = Math.floor((passed % (1000 * 60 * 60)) / (1000 * 60));
+        var secondsPassed = Math.floor((passed % (1000 * 60)) / 1000);
+
+        document.getElementById("time-difference").innerHTML =
+            "网站已运行:" + daysPassed + "天" + hoursPassed + "时" + minutesPassed + "分" + secondsPassed + "秒";
+    }
+
+    updateTimeDifference();
+    setInterval(updateTimeDifference, 1000);
+    </script>
+
+</body>
+</html>
